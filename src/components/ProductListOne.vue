@@ -8,6 +8,7 @@
         {{product.name}} - ${{product.price}}
       </li>
     </ul>
+    <button type="button" @click="reducePrice">Reduce price</button>
   </div>
 </template>
 
@@ -19,6 +20,13 @@
       },
       saleProducts () {
         return this.$store.getters.saleProducts
+      }
+    },
+    methods: {
+      reducePrice () {
+        this.$store.state.products.forEach( product => {
+          product.price -= 1;
+        })
       }
     }
   }
