@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <product-list-one :products="products"></product-list-one>
-    <product-list-two :products="products"></product-list-two>
+    <product-list-one></product-list-one>
+    <product-list-two></product-list-two>
   </div>
 </template>
 
@@ -15,12 +15,12 @@ export default {
   },
   data () {
     return {
-      products: [
+      /*products: [
         {name: 'Banana', price: '$20'},
         {name: 'Orange', price:'$30'},
         {name: 'Lemon', price: '$10'},
         {name: 'Apple', price: '$50'}
-      ]
+      ]*/
     }
   }
 }
