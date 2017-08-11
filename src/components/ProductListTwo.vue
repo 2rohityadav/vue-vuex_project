@@ -4,7 +4,7 @@
       I am product list - 2
     </h1>
     <ul class="flex-container">
-      <li class="flex-item" v-for="product in products">
+      <li class="flex-item" v-for="product in saleProducts">
         {{product.name}} - {{product.price}}
       </li>
     </ul>
@@ -16,6 +16,9 @@
     computed: {
       products () {
         return this.$store.state.products;
+      },
+      saleProducts () {
+        return this.$store.getters.saleProducts
       }
     }
   }
