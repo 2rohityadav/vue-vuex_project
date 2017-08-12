@@ -30,9 +30,11 @@ export const store = new Vuex.Store({
   },
   mutations: {
     reducePrice: state => {
-      state.products.forEach( product => {
-        product.price -= 1;
-      })
+      setTimeout(function(){
+        state.products.forEach( product => {
+          product.price -= 1;
+        })
+      }, 3000)
     }
   }
   // When it comes into debugging If we used locally we don't even know which function or method actully performing task like here reducting price sot the best way here use thrugh mutation which means they can track the chanching the data.
