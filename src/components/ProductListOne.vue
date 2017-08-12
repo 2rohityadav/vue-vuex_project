@@ -26,7 +26,7 @@
       reducePrice (amount) {
         // this.$store.commit('reducePrice');
         // so instead commit directly what we do dispatch in actions
-        this.$store.dispatch('reducePrice', amount);
+        this.$store.dispatch('reducePrice', amount)
         // first parameter will the actions name 2nd can be the data as a parameter
       }
     }
