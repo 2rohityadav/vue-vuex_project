@@ -34,8 +34,16 @@ export const store = new Vuex.Store({
         product.price -= 1;
       })
     }
-  }
+  },
   // When it comes into debugging If we used locally we don't even know which function or method actully performing task like here reducting price sot the best way here use thrugh mutation which means they can track the chanching the data.
 
   // So we used mutation edit the data from the store rather than directly from the components.
+  actions: {
+    reducePrice: context => {
+      setTimeout(function(){
+        context.commit('reducePrice');
+      },3000)
+    }
+  }
+  // actions for performing asynchronous task
 })

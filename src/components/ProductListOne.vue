@@ -24,10 +24,9 @@
     },
     methods: {
       reducePrice () {
-        /*this.$store.state.products.forEach( product => {
-          product.price -= 1;
-        })*/
-        this.$store.commit('reducePrice');
+        // this.$store.commit('reducePrice');
+        // so instead commit directly what we do dispatch in actions
+        this.$store.dispatch('reducePrice');
       }
     }
   }
