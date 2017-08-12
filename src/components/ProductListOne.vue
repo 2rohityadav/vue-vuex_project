@@ -13,22 +13,24 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
   export default {
     computed: {
       products () {
         return this.$store.state.products;
       },
-      saleProducts () {
-        return this.$store.getters.saleProducts;
-      }
+      ...mapGetters([
+        'saleProducts'
+        //,nextOne
+        //,nextOne  if we have it
+      ])
     },
     methods: {
-      reducePrice (amount) {
-        // this.$store.commit('reducePrice');
-        // so instead commit directly what we do dispatch in actions
-        this.$store.dispatch('reducePrice', amount)
-        // first parameter will the actions name 2nd can be the data as a parameter
-      }
+      ...mapActions([
+        'reducePrice'
+        //,nextOne
+        //,nextOne  if we have it
+      ])
     }
   }
 </script>
