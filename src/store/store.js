@@ -29,9 +29,9 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
-    reducePrice: state => {
+    reducePrice: (state, payload) => {
       state.products.forEach( product => {
-        product.price -= 1;
+        product.price -= payload;
       })
     }
   },
@@ -39,9 +39,9 @@ export const store = new Vuex.Store({
 
   // So we used mutation edit the data from the store rather than directly from the components.
   actions: {
-    reducePrice: context => {
+    reducePrice: (context, payload) => {
       setTimeout(function(){
-        context.commit('reducePrice');
+        context.commit('reducePrice', payload)
       },3000)
     }
   }
