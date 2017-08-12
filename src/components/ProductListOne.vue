@@ -8,7 +8,7 @@
         {{product.name}} - ${{product.price}}
       </li>
     </ul>
-    <button type="button" @click="reducePrice">Reduce price</button>
+    <button type="button" @click="reducePrice(4)">Reduce price</button>
   </div>
 </template>
 
@@ -23,10 +23,11 @@
       }
     },
     methods: {
-      reducePrice () {
+      reducePrice (amount) {
         // this.$store.commit('reducePrice');
         // so instead commit directly what we do dispatch in actions
-        this.$store.dispatch('reducePrice');
+        this.$store.dispatch('reducePrice', amount);
+        // first parameter will the actions name 2nd can be the data as a parameter
       }
     }
   }
